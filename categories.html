@@ -26,7 +26,7 @@
             </div>
             <div class="down">
                 <div class="total">
-                    <p>Total : <span id="total">$100</span></p>
+                    <p>Total : <span id="total">$0</span></p>
                 </div>
                 <button id="subment">Subment</button>
                 <button id="cancle">CLose</button>
@@ -49,9 +49,12 @@
                 <div class="button-icon" onclick="renderCategories()"><i class="fa-solid fa-burger icon "></i></div>
                 <div class="button-icon" onclick="renderMessage()"><i class="fa-regular fa-message icon"></i></div>
                 <div class="button-icon" onclick="renderBills()"><i class="fa-solid fa-money-bills icon"></i></div>
-                <div class="button-icon" onclick="showCart()" ><i class="fa-solid fa-cart-shopping icon" ></i></div>
-                <button class="button-icon" onclick="logOut()"><i class="fa-solid fa-right-from-bracket icon"></i></i></button>
-                <div class="count" id="countInCart">0</div>
+                <div class="button-icon" onclick="showCart()"><i class="fa-solid fa-cart-shopping icon"></i>
+                    <div class="count" id="countInCart">0</div>
+                </div>
+                <button class="button-icon" onclick="logOut()"><i class="fa-solid fa-right-from-bracket icon"></i></i>
+                </button>
+
             </div>
         </div>
         <div class="content">
@@ -105,15 +108,15 @@
         let index = localStorage.getItem('index');
         let userData = JSON.parse(localStorage.getItem('usersPos'))
         console.log(userData)
-        if(userData==null){
+        if (userData == null) {
             window.location.href = './login.html'
 
-        }else if(token !== userData[index].name){
+        } else if (token !== userData[index].name) {
 
             window.location.href = './login.html'
 
 
-        }else{
+        } else {
             alert("Login Successfully");
 
         }
