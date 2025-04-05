@@ -157,7 +157,7 @@ body .container .register .register-form form .submit {
 
 
 
-@media (max-width: 425px) {
+@media (max-width: 576px) {
   body .container {
     width: 100%;
     height: 100%;

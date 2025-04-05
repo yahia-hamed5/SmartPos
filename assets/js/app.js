@@ -452,7 +452,7 @@ function renderProduct(name) {
 function addToCart(index) {
 
 
-  if (window.innerWidth <= 425) {
+  if (window.innerWidth <= 576) {
     shoppingCart.style.left = "100%";
     
   }else{
@@ -576,7 +576,7 @@ function renderCount(){
 function showCart() {
   
   if (shoppingCart.style.left == "100%") {
-    shoppingCart.style.left = "0px";
+    shoppingCart.style.left = "calc(100%  - 450px)";
   }else{
     shoppingCart.style.left = "100%";
   }
