@@ -452,7 +452,7 @@ function renderProduct(name) {
 function addToCart(index) {
 
 
-  if (window.innerWidth <= 576) {
+  if (window.innerWidth <= 580) {
     shoppingCart.style.left = "100%";
     
   }else{
