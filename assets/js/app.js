@@ -456,7 +456,7 @@ function addToCart(index) {
     shoppingCart.style.left = "100%";
     
   }else{
-    shoppingCart.style.left = "calc(100%  - 400px)";
+    shoppingCart.style.left = "calc(100%  - 425px)";
 
   }
   
@@ -576,7 +576,7 @@ function renderCount(){
 function showCart() {
   
   if (shoppingCart.style.left == "100%") {
-    shoppingCart.style.left = "calc(100%  - 450px)";
+    shoppingCart.style.left = "calc(100%  - 425px)";
   }else{
     shoppingCart.style.left = "100%";
   }
