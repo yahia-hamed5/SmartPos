@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/categories.css">
+    <link rel="icon"
+        href="https://cdn.iconscout.com/icon/premium/png-256-thumb/terminal-device-nfc-system-2606969-2177516.png?f=webp&w=256">
+    <title>Smart Pos</title>
+</head>
+
+<body>
+
+
+
+
+
+    <div class="container">
+
+        <div class="shopping-cart">
+            <div class="product-cart">
+            </div>
+            <div class="down">
+                <div class="total">
+                    <p>Total : <span id="total">$100</span></p>
+                </div>
+                <button id="subment">Subment</button>
+                <button id="cancle">CLose</button>
+            </div>
+
+        </div>
+
+        <div class="sidebar">
+            <p class="title"><i id="icon" class="fa-solid fa-business-time"></i> Smart<span>Pos</span></p>
+            <div class="group-button1">
+                <button onclick=" renderDashboard()"><i class="fa-solid fa-gauge icon"></i> Dashboard</button>
+                <button onclick="renderCategories()"><i class="fa-solid fa-burger icon "></i> Food & Drinks</button>
+                <button onclick="renderMessage()"><i class="fa-regular fa-message icon"></i> Messages</button>
+                <button onclick="renderBills()"><i class="fa-solid fa-money-bills icon"></i> Bills</button>
+                <button onclick="renderSetting()"><i class="fa-solid fa-gear icon"></i> Settings</button>
+                <button onclick="logOut()"><i class="fa-solid fa-right-from-bracket"></i></i> LogOut</button>
+            </div>
+            <div class="group-button2 d-none">
+                <div class="button-icon" onclick=" renderDashboard()"><i class="fa-solid fa-gauge icon"></i> </div>
+                <div class="button-icon" onclick="renderCategories()"><i class="fa-solid fa-burger icon "></i></div>
+                <div class="button-icon" onclick="renderMessage()"><i class="fa-regular fa-message icon"></i></div>
+                <div class="button-icon" onclick="renderBills()"><i class="fa-solid fa-money-bills icon"></i></div>
+                <div class="button-icon" onclick="showCart()" ><i class="fa-solid fa-cart-shopping icon" ></i></div>
+                <button class="button-icon" onclick="logOut()"><i class="fa-solid fa-right-from-bracket icon"></i></i></button>
+                <div class="count" id="countInCart">0</div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="products">
+                <p class="product_title">Categories</p>
+
+                <div class="cards">
+                    <div class="product-card">
+                        <div class="image">
+                            <img src="./assets/images/coldDrinks/cold-1.jpeg" alt="">
+                        </div>
+                        <p class="product_name">Cold Drinks</p>
+                    </div>
+                    <div class="product-card">
+                        <div class="image">
+                            <img src="./assets/images/Burgers/burger-3.jpeg" alt="">
+                        </div>
+                        <p class="product_name">Burgers</p>
+                    </div>
+                    <div class="product-card">
+                        <div class="image">
+                            <img src="./assets/images/Pizza/pizza-1.jpeg" alt="">
+                        </div>
+                        <p class="product_name">Pizza</p>
+                    </div>
+                    <div class="product-card">
+                        <div class="image">
+                            <img src="./assets/images/Wok/wok-8.jpeg" alt="">
+                        </div>
+                        <p class="product_name">Wok</p>
+                    </div>
+                    <div class="product-card">
+                        <div class="image">
+                            <img src="./assets/images/Desserts/dessert-1.jpeg" alt="">
+                        </div>
+                        <p class="product_name">Desserts</p>
+                    </div>
+                    <div class="product-card">
+                        <div class="image">
+                            <img src="./assets/images/Pasta/pasta-1.jpeg" alt="">
+                        </div>
+                        <p class="product_name">Pasta</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let token = sessionStorage.getItem('tokeen');
+        let index = localStorage.getItem('index');
+        let userData = JSON.parse(localStorage.getItem('usersPos'))
+        console.log(userData)
+        if(userData==null){
+            window.location.href = './login.html'
+
+        }else if(token !== userData[index].name){
+
+            window.location.href = './login.html'
+
+
+        }else{
+            alert("Login Successfully");
+
+        }
+    </script>
+    <script src="./assets/js/app.js"></script>
+
+</body>
+
+</html>
